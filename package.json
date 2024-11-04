@@ -9,21 +9,13 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onView:shortcutFinderView"
-  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands" : [
-      {
-				"command": "shortcutFinder.helloWorld",
-				"title": "Hello World"
-			}
-    ],
     "views": {
       "shortcutfinder": [
         {
-          "id": "shortcutFinderView",
+          "id": "shortcutfinder.shortcutFinderView",
+          "type": "webview",
           "name": "Shortcut Finder"
         }
       ]
