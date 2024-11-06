@@ -3,17 +3,24 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
+    const resourcesDirectory = vscode.Uri.joinPath(context.extensionUri, 'resources');
     const thisProvider = {
         resolveWebviewView: function (thisWebview: any, thisWebviewContext: any, thisToken: any) {
-            thisWebview.webview.options = { enableScripts: true };
-            thisWebview.webview.html = getWebviewContent(context.extensionUri);
+            thisWebview.webview.options = { 
+                enableScripts: true,
+                localResourceRoots: [resourcesDirectory]
+            };
+            thisWebview.webview.html = getWebviewContent(context.extensionUri, thisWebview);
         }
     };
     context.subscriptions.push(vscode.window.registerWebviewViewProvider("shortcutfinder.shortcutFinderView", thisProvider));
 }
 
-function getWebviewContent(extensionUri: vscode.Uri) {
-    const htmlPath = path.join(extensionUri.fsPath, 'searchBar.html');
-    const htmlContent = fs.readFileSync(htmlPath, 'utf-8');
+function getWebviewContent(extensionUri: vscode.Uri, webviewView: vscode.WebviewView) {
+    const htmlPath = path.join(extensionUri.fsPath, 'resources' ,'searchBar.html');
+    let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
+    const scriptUri = vscode.Uri.joinPath(extensionUri, 'resources', 'script.js');
+    const scriptWebviewUri = webviewView.webview.asWebviewUri(scriptUri);
+    htmlContent = htmlContent.replace('<script src=""></script>', `<script src="${scriptWebviewUri}"></script>`);
     return htmlContent;
 }
