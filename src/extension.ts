@@ -19,8 +19,9 @@ export function activate(context: vscode.ExtensionContext) {
 function getWebviewContent(extensionUri: vscode.Uri, webviewView: vscode.WebviewView) {
     const htmlPath = path.join(extensionUri.fsPath, 'resources' ,'searchBar.html');
     let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
-    const scriptUri = vscode.Uri.joinPath(extensionUri, 'resources', 'script.js');
-    const scriptWebviewUri = webviewView.webview.asWebviewUri(scriptUri);
-    htmlContent = htmlContent.replace('<script src=""></script>', `<script src="${scriptWebviewUri}"></script>`);
+    const scriptUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'script.js'));
+    const jsonUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'shortcuts.json'));
+    htmlContent = htmlContent.replace('<script src=""></script>', `<script src="${scriptUri}"></script>`);
+    htmlContent = htmlContent.replace('<!-- JSON_URI_PLACEHOLDER -->', jsonUri.toString());
     return htmlContent;
 }
