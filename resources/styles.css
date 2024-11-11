@@ -1,5 +1,6 @@
 .search-item{
   max-width: 400px;
+  min-width: 200px;
   border: 2px solid grey;
   border-radius: 7px;
   margin-bottom: 10px;
@@ -24,4 +25,17 @@
 
 .hide{
   display: none;
+}
+
+#search-bar{
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #181818;
+  border: 2px solid white;
+  color: white;
+  font-size: 17px;
+  margin-bottom: 25px;
+  padding: 2;
+  margin-right: 0;
 }

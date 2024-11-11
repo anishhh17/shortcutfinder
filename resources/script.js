@@ -1,4 +1,4 @@
-const source = document.getElementById("searchbar");
+const source = document.getElementById("search-bar");
 const p = document.getElementById("temp");
 const shortcutCardTemplate = document.getElementById("data-shortcut-template");
 let shortcuts = [];
