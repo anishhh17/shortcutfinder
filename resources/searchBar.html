@@ -5,36 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shortcut Finder</title>
 </head>
+<script>
+    const jsonUri = '<!-- JSON_URI_PLACEHOLDER -->';
+    window.jsonUri = jsonUri;
+</script>
+<link rel="stylesheet" href="-- CSS_URI_PLACEHOLDER --">
+<script src=""></script>
 <body>
     <input type="search" id="searchbar" name="searchbar"/>
     <p id="temp">Start typing above to find the short cut you are looking for</p>
-    <div class="search-items">
+    <div class="search-items"></div>
+    <template id="data-shortcut-template">
         <div class="search-item">
-            <h1 class="search-item-header">To Select all occurrences of current selection</h1>
-            <p class="search-item-body">Ctrl C</p>
-            <p class="search-item-body">Ctrl C</p>
+            <h1 class="search-item-header" data-header></h1>
+            <ul class="search-item-body" data-body></ul>
         </div>
-        <div class="search-item">
-            <h1 class="search-item-header">To Select all occurrences of current selection</h1>
-            <p class="search-item-body">Ctrl C</p>
-            <p class="search-item-body">Ctrl C</p>
-        </div>
-        <div class="search-item">
-            <h1 class="search-item-header">To Select all occurrences of current selection</h1>
-            <p class="search-item-body">Ctrl C</p>
-            <p class="search-item-body">Ctrl C</p>
-        </div>
-        <div class="search-item">
-            <h1 class="search-item-header">To Select all occurrences of current selection</h1>
-            <p class="search-item-body">Ctrl C</p>
-            <p class="search-item-body">Ctrl C</p>
-        </div>
-    </div>
-    <script>
-        const jsonUri = '<!-- JSON_URI_PLACEHOLDER -->';
-        window.jsonUri = jsonUri;
-    </script>
-    <link rel="stylesheet" href="-- CSS_URI_PLACEHOLDER --">
-    <script src=""></script>
+    </template>
 </body>
 </html>

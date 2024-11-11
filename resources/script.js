@@ -1,6 +1,7 @@
 const source = document.getElementById("searchbar");
 const p = document.getElementById("temp");
-let shortcuts = null;
+const shortcutCardTemplate = document.getElementById("data-shortcut-template");
+let shortcuts = [];
 
 fetch(window.jsonUri).then(response => {
   if (!response.ok) {
@@ -8,20 +9,28 @@ fetch(window.jsonUri).then(response => {
   }
   return response.json();
 }).then(data => {
-  shortcuts = data;
+  shortcuts = data.map(element => {
+    const card = shortcutCardTemplate.content.cloneNode(true).children[0];
+    console.log(element);
+    const header = card.querySelector("[data-header]");
+    const body = card.querySelector("[data-body]");
+
+    header.textContent = Object.keys(element)[0];
+    Object.values(element)[0].forEach( i => {
+      let li = document.createElement("li");
+      li.appendChild(document.createTextNode(i));
+      body.appendChild(li);
+    });
+
+    document.querySelector(".search-items").appendChild(card);
+    return {task: Object.keys(element)[0].toLowerCase(), shortcut: Object.values(element)[0], element: card};
+  });
 }).catch(err => console.log('Fetch error:', err));
 
-const inputHandler = function(e) {
-  // p.innerText = e.target.value;
-  p.innerText = "";
-  list = document.getElementById("myList");
-  list.innerHTML = null;
-  shortcuts.forEach(element => {
-    item = document.createElement("li");
-    item.innerText = Object.entries(element)[0][0] + " : " + Object.entries(element)[0][1];
-    list.appendChild(item);
+source.addEventListener('input', e => {
+  const value = e.target.value.toLowerCase();
+  shortcuts.forEach( element => {
+    const isVisible = element.task.includes(value);
+    element.element.classList.toggle("hide", !isVisible);
   });
-};
-
-source.addEventListener('input', inputHandler);
-source.addEventListener('propertychange',inputHandler);
+});
