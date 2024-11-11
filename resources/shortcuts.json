@@ -6,7 +6,7 @@
     ]
   },
   {
-    "Quick Open, Go to File…": [
+    "Quick Open, Go to File": [
       "Ctrl + P"
     ]
   },
@@ -453,7 +453,7 @@
     ]
   },
   {
-    "Open File…": [
+    "Open File": [
       "Ctrl + O"
     ]
   },
@@ -474,12 +474,8 @@
   },
   {
     "Close": [
-      {
-        "Shortcut": "Ctrl + F4"
-      },
-      {
-        "Shortcut": "Ctrl K  ctrl w"
-      }
+      "Ctrl + F4",
+      "Ctrl K  Ctrl W"
     ]
   },
   {
@@ -528,8 +524,12 @@
     ]
   },
   {
-    "Zoom in/out": [
-      "Ctrl + =",
+    "Zoom in": [
+      "Ctrl + ="
+    ]
+  },
+  {
+    "Zoom out": [
       "Ctrl + -"
     ]
   },
@@ -645,20 +645,31 @@
     ]
   },
   {
-    "Scroll up/down": [
-      "Ctrl + ↑",
+    "Scroll up": [
+      "Ctrl + ↑"
+    ]
+  },
+  {
+    "Scroll down": [
       "Ctrl + ↓"
     ]
   },
   {
-    "Scroll page up/down": [
-      "Shift + PgUp",
-      "PgDn"
+    "Scroll page up": [
+      "Shift + PgUp"]
+  },
+  {
+    "Scroll page down": [
+      "Shift + PgDn"
     ]
   },
   {
-    "Scroll to top/bottom": [
-      "Ctrl + Home",
+    "Scroll to top": [
+      "Ctrl + Home"
+    ]
+  },
+  {
+    "Scroll to bottom": [
       "Ctrl + End"
     ]
   }

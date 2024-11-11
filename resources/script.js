@@ -1,12 +1,6 @@
 const source = document.getElementById("searchbar");
 const p = document.getElementById("temp");
 let shortcuts = null;
-const inputHandler = function(e) {
-  p.innerText = e.target.value;
-};
-
-source.addEventListener('input', inputHandler);
-source.addEventListener('propertychange',inputHandler);
 
 fetch(window.jsonUri).then(response => {
   if (!response.ok) {
@@ -15,5 +9,19 @@ fetch(window.jsonUri).then(response => {
   return response.json();
 }).then(data => {
   shortcuts = data;
-  console.log(shortcuts[0]);
 }).catch(err => console.log('Fetch error:', err));
+
+const inputHandler = function(e) {
+  // p.innerText = e.target.value;
+  p.innerText = "";
+  list = document.getElementById("myList");
+  list.innerHTML = null;
+  shortcuts.forEach(element => {
+    item = document.createElement("li");
+    item.innerText = Object.entries(element)[0][0] + " : " + Object.entries(element)[0][1];
+    list.appendChild(item);
+  });
+};
+
+source.addEventListener('input', inputHandler);
+source.addEventListener('propertychange',inputHandler);

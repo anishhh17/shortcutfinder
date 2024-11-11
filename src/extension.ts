@@ -21,7 +21,9 @@ function getWebviewContent(extensionUri: vscode.Uri, webviewView: vscode.Webview
     let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
     const scriptUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'script.js'));
     const jsonUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'shortcuts.json'));
+    const cssUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'styles.css'));
     htmlContent = htmlContent.replace('<script src=""></script>', `<script src="${scriptUri}"></script>`);
     htmlContent = htmlContent.replace('<!-- JSON_URI_PLACEHOLDER -->', jsonUri.toString());
+    htmlContent = htmlContent.replace('-- CSS_URI_PLACEHOLDER --', cssUri.toString());
     return htmlContent;
 }
