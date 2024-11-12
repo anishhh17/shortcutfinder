@@ -11,7 +11,6 @@ fetch(window.jsonUri).then(response => {
 }).then(data => {
   shortcuts = data.map(element => {
     const card = shortcutCardTemplate.content.cloneNode(true).children[0];
-    console.log(element);
     const header = card.querySelector("[data-header]");
     const body = card.querySelector("[data-body]");
 
@@ -31,6 +30,7 @@ source.addEventListener('input', e => {
   const value = e.target.value.toLowerCase();
   shortcuts.forEach( element => {
     const isVisible = element.task.includes(value);
+    console.log(isVisible);
     element.element.classList.toggle("hide", !isVisible);
   });
 });
