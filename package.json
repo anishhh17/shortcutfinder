@@ -2,10 +2,13 @@
   "name": "shortcutfinder",
   "displayName": "ShortcutFinder",
   "description": "Discover essential shortcuts and hotkeys that will elevate your coding efficiency.",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "repository": "https://github.com/anishhh17/shortcutfinder",
   "engines": {
     "vscode": "^1.95.0"
   },
+  "icon": "images/shortcut.png",
+  "publisher": "AnishSurendra",
   "categories": [
     "Other"
   ],
