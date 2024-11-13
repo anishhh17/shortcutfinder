@@ -1,9 +1,7 @@
 # Change Log
 
-All notable changes to the "shortcutfinder" extension will be documented in this file.
+## 1.0.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Initial release of ShortcutFinder:
 
-## [Unreleased]
-
-- Initial release
+Shortcut lookup for common VS Code actions
