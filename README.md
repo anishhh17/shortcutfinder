@@ -6,6 +6,8 @@ ShortcutFinder is a VS Code extension that helps beginner developers discover an
 
 Shortcut Lookup: Search for shortcuts associated with frequently used VS Code actions like "Find", "Replace", "Open Terminal", and more.
 
+Hint : use Alt + S to open the shortcut finder, so you rely on your mouse less and less
+
 ![](images/instructions.gif)
 
 ## Requirements

@@ -2,7 +2,7 @@ const source = document.getElementById("search-bar");
 const p = document.getElementById("temp");
 const shortcutCardTemplate = document.getElementById("data-shortcut-template");
 let shortcuts = [];
-
+source.focus();
 fetch(window.jsonUri).then(response => {
   if (!response.ok) {
       throw new Error('Network response was not ok');
