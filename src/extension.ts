@@ -3,6 +3,13 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
+    let disposable = vscode.commands.registerCommand('shortcutfinder.openShortcutFinder', async () => {
+        const view = vscode.window.activeTextEditor ? vscode.window.activeTextEditor.document.uri : undefined;
+        await vscode.commands.executeCommand('shortcutfinder.shortcutFinderView.focus',{});
+    });
+
+    context.subscriptions.push(disposable);
+
     const resourcesDirectory = vscode.Uri.joinPath(context.extensionUri, 'resources');
     const thisProvider = {
         resolveWebviewView: function (thisWebview: any, thisWebviewContext: any, thisToken: any) {

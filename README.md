@@ -1,20 +1,16 @@
 # shortcutfinder README
 
-This is the README for your extension "shortcutfinder". After writing up a brief description, we recommend including the following sections.
+ShortcutFinder is a VS Code extension that helps beginner developers discover and learn keyboard shortcuts for commonly used actions. By using ShortcutFinder, you can easily look up shortcuts that replace commonly used panel buttons, helping you improve your productivity and coding efficiency over time.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Shortcut Lookup: Search for shortcuts associated with frequently used VS Code actions like "Find", "Replace", "Open Terminal", and more.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![](images/instructions.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+No additional dependencies are required. ShortcutFinder is built to integrate seamlessly with VS Code.
 
 ## Extension Settings
 
@@ -29,7 +25,7 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Limited Shortcut Library: Currently, ShortcutFinder provides shortcuts for only common VS Code actions. Future updates will expand coverage based on user feedback.
 
 ## Release Notes
 

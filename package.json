@@ -28,7 +28,20 @@
           "icon": "images/shortcut.svg"
         }
       ]
-    }
+    },
+    "commands": [
+      {
+        "command": "shortcutfinder.openShortcutFinder",
+        "title": "Open ShortcutFinder"
+      }
+    ],
+    "keybindings":[
+      {
+        "command": "shortcutfinder.openShortcutFinder",
+        "key": "alt+s",
+        "when": "editorTextFocus"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
