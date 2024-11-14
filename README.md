@@ -26,10 +26,8 @@ Limited Shortcut Library: Currently, ShortcutFinder provides shortcuts for only 
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.1
 
-Initial release of ShortcutFinder:
-
-Shortcut lookup for common VS Code actions
+Added support for MacOS
 
 **Accelerate your development workflow with ShortcutFinder!**
