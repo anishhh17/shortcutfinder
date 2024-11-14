@@ -34,9 +34,8 @@ function getWebviewContent(extensionUri: vscode.Uri, webviewView: vscode.Webview
     }
     
     const scriptUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'script.js'));
-    const jsonUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'shortcuts.json'));
+    const jsonUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', process.platform === "darwin"? 'shortcuts-macos.json' :  'shortcuts-windows.json'));
     const cssUri = webviewView.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, 'resources', 'styles.css'));
-    
     htmlContent = htmlContent.replace('<script src=""></script>', `<script src="${scriptUri}" defer></script>`);
     htmlContent = htmlContent.replace('<!-- JSON_URI_PLACEHOLDER -->', jsonUri.toString());
     htmlContent = htmlContent.replace('-- CSS_URI_PLACEHOLDER --', cssUri.toString());

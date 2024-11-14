@@ -12,7 +12,7 @@ Hint : use Alt + S to open the shortcut finder, so you rely on your mouse less a
 
 ## Requirements
 
-No additional dependencies are required. ShortcutFinder is built to integrate seamlessly with VS Code. Unfortunately, just on Windows or Linux for now.
+No additional dependencies are required. ShortcutFinder is built to integrate seamlessly with VS Code.
 
 ## Extension Settings
 
